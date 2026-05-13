@@ -38,7 +38,7 @@ export default function Navbar() {
       }}>
         
         <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 16.5, fontWeight: 500 }}>
-          prithviraj<span style={{ color: "#3b82f6" }}>.dev</span>
+          prithviraj<span style={{ color: "#3b82f6" }}> p.u</span>
         </span>
 
         {/* Desktop Navigation */}
