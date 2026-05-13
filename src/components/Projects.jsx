@@ -58,7 +58,7 @@ export default function Projects() {
             i % 2 === 0 ? (
               <FadeLeft
                 key={project.title}
-                delay={i * 120}
+                delay={i * 200}
               >
                 <ProjectCard
                   project={project}
@@ -67,7 +67,7 @@ export default function Projects() {
             ) : (
               <FadeRight
                 key={project.title}
-                delay={i * 120}
+                delay={i * 200}
               >
                 <ProjectCard
                   project={project}
