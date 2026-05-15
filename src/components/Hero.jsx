@@ -90,44 +90,67 @@ export default function Hero() {
 
       <div style={{ position: "relative", zIndex: 1, maxWidth: 850, textAlign: "center", width: "100%" }}>
         
-        {/* Profile Image */}
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: 28 }}>
-          <div style={{ position: "relative", width: 110, height: 110 }}>
-            <div style={{
-              position: "absolute", inset: -8, borderRadius: "50%",
-              border: "1.5px dashed rgba(59,130,246,0.35)",
-              animation: "spinRing 14s linear infinite",
-            }} />
+        {/* Profile Image - Bigger & Perfectly Round */}
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: 32 }}>
+          <div style={{ position: "relative", width: 170, height: 170 }}>
             
+            {/* Outer Dashed Ring */}
+            <div style={{
+              position: "absolute",
+              inset: -12,
+              borderRadius: "50%",
+              border: "1.5px dashed rgba(59,130,246,0.35)",
+              animation: "spinRing 16s linear infinite",
+            }} />
+
+            {/* Main Image */}
             {!imgErr ? (
               <img
                 src="/profile.jpg"
                 alt="Prithviraj P.U"
                 onError={() => setImgErr(true)}
                 style={{
-                  width: "100%", height: "100%", borderRadius: "50%",
-                  objectFit: "cover", objectPosition: "center 20%",
-                  border: "3px solid rgba(59,130,246,0.45)",
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "50%",           // Perfect round
+                  objectFit: "cover",
+                  objectPosition: "center 20%",
+                  border: "4px solid rgba(59,130,246,0.5)",
+                  boxShadow: "0 0 40px rgba(59,130,246,0.3)",
                 }}
               />
             ) : (
               <div style={{
-                width: "100%", height: "100%", borderRadius: "50%",
-                background: "rgba(59,130,246,0.1)", border: "3px solid rgba(59,130,246,0.45)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 32, fontWeight: 700, color: "#3b82f6"
+                width: "100%",
+                height: "100%",
+                borderRadius: "50%",
+                background: "rgba(59,130,246,0.1)",
+                border: "4px solid rgba(59,130,246,0.5)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 42,
+                fontWeight: 700,
+                color: "#3b82f6",
+                boxShadow: "0 0 40px rgba(59,130,246,0.3)",
               }}>PP</div>
             )}
 
+            {/* Online Status Dot */}
             <div style={{
-              position: "absolute", bottom: 4, right: 4,
-              width: 16, height: 16, borderRadius: "50%",
-              background: "#10b981", border: "2.5px solid #0a0a0a",
+              position: "absolute",
+              bottom: 6,
+              right: 6,
+              width: 18,
+              height: 18,
+              borderRadius: "50%",
+              background: "#10b981",
+              border: "3px solid #0a0a0a",
             }} />
           </div>
         </div>
 
-        {/* Name with Animation */}
+        {/* Rest of the content remains same */}
         <h1 style={{
           fontSize: "clamp(2.5rem, 9vw, 5.2rem)",
           fontWeight: 900,
@@ -190,7 +213,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* === KEYFRAMES (Very Important) === */}
+      {/* Keyframes */}
       <style>{`
         @keyframes povKnifeThrow {
           0% {
@@ -205,9 +228,7 @@ export default function Hero() {
           }
         }
 
-        @keyframes blink {
-          50% { opacity: 0; }
-        }
+        @keyframes blink { 50% { opacity: 0; } }
 
         @keyframes spinRing {
           from { transform: rotate(0deg); }
