@@ -112,23 +112,7 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* Media Queries */}
-      <style>{`
-        @media (max-width: 768px) {
-          .desktop-nav {
-            display: none !important;
-          }
-          .mobile-menu-btn {
-            display: block !important;
-          }
-        }
 
-        @media (min-width: 769px) {
-          .mobile-menu-btn {
-            display: none !important;
-          }
-        }
-      `}</style>
     </nav>
   );
 }

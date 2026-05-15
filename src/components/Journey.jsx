@@ -115,23 +115,7 @@ export default function Journey() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 480px) {
-          section {
-            padding: 4.5rem 1rem !important;
-          }
-          h2 {
-            font-size: 2.15rem !important;
-            margin-bottom: 2.8rem !important;
-          }
-        }
 
-        @media (max-width: 600px) {
-          div[style*="gap: 24px"] {
-            gap: 20px !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

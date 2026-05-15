@@ -77,25 +77,31 @@ export default function Projects() {
           )}
         </div>
       </div>
-
       <style>{`
-        @media (max-width: 480px) {
-          section {
-            padding: 4rem 1rem !important;
-          }
-
-          h2 {
-            font-size: 2.1rem !important;
+        /* Desktop - Force 2 columns */
+        @media (min-width: 1024px) {
+          #projects > div > div {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 32px !important;
           }
         }
 
-        @media (max-width: 600px) {
-          div[style*="grid-template-columns"] {
+        /* Tablet */
+        @media (max-width: 1023px) and (min-width: 768px) {
+          #projects > div > div {
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)) !important;
+          }
+        }
+
+        /* Mobile */
+        @media (max-width: 767px) {
+          #projects > div > div {
             grid-template-columns: 1fr !important;
-            gap: 2rem !important;
+            gap: 24px !important;
           }
         }
       `}</style>
+
     </section>
   );
 }

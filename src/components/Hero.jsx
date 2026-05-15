@@ -9,6 +9,7 @@ export default function Hero() {
   const initials = "P.U";
   
   const words = ["Django Backends", "React UIs", "REST APIs", "PostgreSQL DBs", "Real-Time Apps"];
+
   const wordRef = useRef(0);
   const charRef = useRef(0);
   const dirRef = useRef(1);
@@ -33,6 +34,7 @@ export default function Hero() {
       }
       setTyped(word.slice(0, charRef.current));
     };
+
     const id = setInterval(tick, 75);
     return () => clearInterval(id);
   }, []);
@@ -44,14 +46,12 @@ export default function Hero() {
     containerRef.current.style.setProperty("--mouse-y", `${e.clientY - top}px`);
   };
 
-  // Logic to calculate the "Accelerating" delay
-  // Starts slow (0.4s gap) and shrinks down to 0.05s gap
   const getAcceleratingDelay = (index) => {
     let delay = 0;
-    let currentGap = 0.4; // Starting gap (slow)
+    let currentGap = 0.4;
     for (let i = 0; i < index; i++) {
       delay += currentGap;
-      currentGap = Math.max(0.05, currentGap * 0.7); // Shrink gap by 30% each time
+      currentGap = Math.max(0.05, currentGap * 0.7);
     }
     return delay;
   };
@@ -62,9 +62,16 @@ export default function Hero() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       style={{
-        minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center",
-        padding: "80px 1rem 60px", position: "relative", overflow: "hidden",
-        backgroundColor: "#0a0a0a", "--mouse-x": "50%", "--mouse-y": "50%",
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "100px 1.25rem 80px",
+        position: "relative",
+        overflow: "hidden",
+        backgroundColor: "#0a0a0a",
+        "--mouse-x": "50%",
+        "--mouse-y": "50%",
         perspective: "1200px"
       }}
     >
@@ -74,6 +81,7 @@ export default function Hero() {
         backgroundImage: "linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)",
         backgroundSize: "60px 60px",
       }} />
+
       <div style={{
         position: "absolute", inset: 0, zIndex: 0,
         background: `radial-gradient(700px circle at var(--mouse-x) var(--mouse-y), rgba(59, 130, 246, 0.08), transparent 45%)`,
@@ -82,7 +90,7 @@ export default function Hero() {
 
       <div style={{ position: "relative", zIndex: 1, maxWidth: 850, textAlign: "center", width: "100%" }}>
         
-        {/* Profile Image Container */}
+        {/* Profile Image */}
         <div style={{ display: "flex", justifyContent: "center", marginBottom: 28 }}>
           <div style={{ position: "relative", width: 110, height: 110 }}>
             <div style={{
@@ -90,6 +98,7 @@ export default function Hero() {
               border: "1.5px dashed rgba(59,130,246,0.35)",
               animation: "spinRing 14s linear infinite",
             }} />
+            
             {!imgErr ? (
               <img
                 src="/profile.jpg"
@@ -109,6 +118,7 @@ export default function Hero() {
                 fontSize: 32, fontWeight: 700, color: "#3b82f6"
               }}>PP</div>
             )}
+
             <div style={{
               position: "absolute", bottom: 4, right: 4,
               width: 16, height: 16, borderRadius: "50%",
@@ -117,7 +127,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ACCELERATING KNIFE THROW */}
+        {/* Name with Animation */}
         <h1 style={{
           fontSize: "clamp(2.5rem, 9vw, 5.2rem)",
           fontWeight: 900,
@@ -171,11 +181,16 @@ export default function Hero() {
         </p>
 
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-          <button style={{ background: "#3b82f6", color: "#fff", padding: "14px 32px", borderRadius: 8, border: "none", fontWeight: 600 }}>View Projects</button>
-          <button style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.25)", color: "#fff", padding: "14px 32px", borderRadius: 8 }}>Contact Me</button>
+          <button style={{ background: "#3b82f6", color: "#fff", padding: "14px 32px", borderRadius: 8, border: "none", fontWeight: 600 }}>
+            View Projects
+          </button>
+          <button style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.25)", color: "#fff", padding: "14px 32px", borderRadius: 8 }}>
+            Contact Me
+          </button>
         </div>
       </div>
-      
+
+      {/* === KEYFRAMES (Very Important) === */}
       <style>{`
         @keyframes povKnifeThrow {
           0% {
@@ -189,8 +204,15 @@ export default function Hero() {
             filter: blur(0);
           }
         }
-        @keyframes blink { 50%{opacity:0} }
-        @keyframes spinRing { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+
+        @keyframes blink {
+          50% { opacity: 0; }
+        }
+
+        @keyframes spinRing {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
       `}</style>
     </section>
   );

@@ -78,26 +78,6 @@ export default function Skills() {
         </FadeUp>
       </div>
 
-{/* Add this style block at the end of each section */}
-<style>{`
-  @media (max-width: 480px) {
-    section {
-      padding: 4rem 1rem !important;
-    }
-    
-    h2 {
-      font-size: 2.1rem !important;
-    }
-  }
-  
-  /* Force single column on very small screens */
-  @media (max-width: 600px) {
-    div[style*="grid-template-columns"] {
-      grid-template-columns: 1fr !important;
-      gap: 2rem !important;
-    }
-  }
-`}</style>
     </section>
   );
 }
