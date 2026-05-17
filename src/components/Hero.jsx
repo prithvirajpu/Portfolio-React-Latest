@@ -204,10 +204,12 @@ export default function Hero() {
         </p>
 
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-          <button style={{ background: "#3b82f6", color: "#fff", padding: "14px 32px", borderRadius: 8, border: "none", fontWeight: 600 }}>
+          <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+           style={{ background: "#3b82f6", color: "#fff", padding: "14px 32px", borderRadius: 8, border: "none", fontWeight: 600 }}>
             View Projects
           </button>
-          <button style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.25)", color: "#fff", padding: "14px 32px", borderRadius: 8 }}>
+          <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+           style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.25)", color: "#fff", padding: "14px 32px", borderRadius: 8 }}>
             Contact Me
           </button>
         </div>
