@@ -8,6 +8,18 @@ export const SKILLS = {
 };
 
 export const PROJECTS = [
+    {
+    title: "TRS",
+    subtitle: "Multi-tenant Real-Time Support System",
+    description: "SaaS based Customer support system. Live ticket management with WebSocket-powered chat, agent routing, and automated task handling via Celery.",
+    tech: ["Django", "React", "WebSockets", "Redis", "Celery"],
+    features: ["Real-time chat (WebSockets)", "Agent assignment workflows", "Background tasks via Celery", "Role-based access control"],
+    color: "#8b5cf6",
+    icon: "⚡",
+    image: "/images/ticketflow.png",
+    github: "https://github.com/prithvirajpu",
+    live: "https://trs.prithvirajpu.online",
+  },
   {
     title: "ShopKickora",
     subtitle: "E-Commerce Platform",
@@ -19,19 +31,6 @@ export const PROJECTS = [
     image: "/images/shopkickora.png",
     github: "https://github.com/prithvirajpu",
     live: "https://shopkickora.prithvirajpu.online",
-  },
-  // ... (rest of your projects)
-  {
-    title: "TRS ",
-    subtitle: "Real-Time Support System",
-    description: "Live ticket management platform with WebSocket-powered chat, agent routing, and automated task handling via Celery.",
-    tech: ["Django", "React", "WebSockets", "Redis", "Celery"],
-    features: ["Real-time chat (WebSockets)", "Agent assignment workflows", "Background tasks via Celery", "Role-based access control"],
-    color: "#8b5cf6",
-    icon: "⚡",
-    image: "/images/ticketflow.png",
-    github: "https://github.com/prithvirajpu",
-    live: "https://trs.prithvirajpu.online",
   },
   {
     title: "Task Management System ",
